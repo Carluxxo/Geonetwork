@@ -1,0 +1,908 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>User Interface Configuration &mdash; GeoNetwork opensource v3.10 GeoNetwork Documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Recherche" href="../../search.html"/>
+    <link rel="top" title="GeoNetwork opensource v3.10 GeoNetwork Documentation" href="../../index.html"/>
+        <link rel="up" title="Configuring the catalog" href="index.html"/>
+        <link rel="next" title="Configuring CSS &amp; Style" href="css-configuration.html"/>
+        <link rel="prev" title="System configuration" href="system-configuration.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> GeoNetwork opensource
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/about.html">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/authors.html">Author</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/authors.html#project-steering-committee-psc">Project Steering Committee (PSC)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/authors.html#committers">Committers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/authors.html#contributors">Contributors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/authors.html#the-documentation">The documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../overview/change-log/index.html">Change log</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.0.html">Version 3.0.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.1.html">Version 3.0.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.2.html">Version 3.0.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.3.html">Version 3.0.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.0.4.html">Version 3.0.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.2.0.html">Version 3.2.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.2.1.html">Version 3.2.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.2.2.html">Version 3.2.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.4.0.html">Version 3.4.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.4.1.html">Version 3.4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.4.2.html">Version 3.4.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.4.3.html">Version 3.4.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.4.4.html">Version 3.4.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.6.0.html">Version 3.6.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.8.0.html">Version 3.8.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.8.1.html">Version 3.8.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.8.2.html">Version 3.8.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.8.3.html">Version 3.8.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.10.0.html">Version 3.10.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.10.1.html">Version 3.10.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.10.2.html">Version 3.10.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../overview/change-log/version-3.10.3.html">Version 3.10.3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../install-guide/index.html">Installation guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install-guide/installing-from-zip.html">Installing using a ZIP file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install-guide/installing-from-war-file.html">Installing using a WAR file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install-guide/installing-from-source-code.html">Building from Source Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/installing-from-source-code.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/installing-from-source-code.html#tools">Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/installing-from-source-code.html#building-running">Building &amp; Running</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="https://geonetwork-opensource.org/downloads.html#third-party-distributions">Installing a third-party distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install-guide/installing-index.html">Installing remote index</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/installing-index.html#manual-installation">Manual installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/installing-index.html#install-using-maven">Install using Maven</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/installing-index.html#check-installation">Check installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/installing-index.html#configure-connection">Configure connection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../install-guide/configuring-database.html">Configuring the database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install-guide/customizing-data-directory.html">Customizing the data directory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/customizing-data-directory.html#creating-a-new-data-directory">Creating a new data directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/customizing-data-directory.html#setting-the-data-directory">Setting the data directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/customizing-data-directory.html#java-system-property">Java System Property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/customizing-data-directory.html#bean-configuration">Bean configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/customizing-data-directory.html#using-a-s3-object-storage">Using a S3 object storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/customizing-data-directory.html#structure-of-the-data-directory">Structure of the data directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/customizing-data-directory.html#advanced-data-directory-configuration">Advanced data directory configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/customizing-data-directory.html#check-the-configuration">Check the configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../install-guide/using-multinode-mode.html">Using multinode mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/using-multinode-mode.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/using-multinode-mode.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../install-guide/map-print-setup.html">Configuring printing of the map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install-guide/loading-samples.html">Loading templates and sample data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install-guide/loading-samples.html#signing-in-and-loading-templates">Signing in and loading templates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">User guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/quick-start/index.html">Quick start</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#starting-the-catalog">Starting the catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#signing-in-and-load-templates">Signing in and load templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#searching-information">Searching information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/quick-start/index.html#discovering-information">Discovering information</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/map/index.html">Maps and dataset visualisation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/map/index.html#map-viewer">Map viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/map/index.html#store-and-share-maps">Store and share maps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/describing-information/index.html">Describing information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/managing-templates.html">Creating templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/creating-metadata.html">Creating a new record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/importing-metadata.html">Importing a new record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/editing-metadata.html">Editing metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/deleting-metadata.html">Deleting a record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/multilingual-editing.html">Multilingual editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/inspire-editing.html">Describing resources for the INSPIRE directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/describing-information/inspire-editing.html#migrating-from-technical-guidance-version-1-3-to-version-2-0">Migrating from Technical guidance version 1.3 to version 2.0</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/associating-resources/index.html">Associating resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/associating-resources/linking-documents.html">Associating documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/associating-resources/linking-records.html">Associating another record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/associating-resources/doi.html">Digital Object Identifier (DOI)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/tag-information/index.html">Classify information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/tag-information/tagging-with-categories.html">Tagging with categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/tag-information/tagging-with-keywords.html">Tagging with keywords</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/publishing/index.html">Publishing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/publishing/managing-privileges.html">Managing privileges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/publishing/managing-privileges.html#setting-privileges">Setting Privileges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/publishing/restricting-information-to-metadata-sections.html">Restricting information to metadata sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/publishing/transferring-privileges.html">Transferring privileges</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/analyzing/index.html">Analyzing data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/analyzing/metadata.html">Statistics on catalog content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/analyzing/data.html">Analyze and visualize data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/workflow/index.html">Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/validation.html">Validating records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/suggestion.html">Suggestion for improving metadata content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/life-cycle.html">Life cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/geopublication.html">Publishing GIS data in a map server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/versioning.html">Versioning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/workflow/batchupdate.html">Updating a set of records</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/harvesting/index.html">Harvesting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-geonetwork.html">GeoNetwork 2.0 Harvester</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-csw.html">Harvesting CSW services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-ogcwxs.html">Harvesting OGC Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-filesystem.html">Local File System Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-webdav.html">WEBDAV Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-oaipmh.html">OAIPMH Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-sde.html">Harvesting an ARCSDE Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-geoportal.html">GeoPortal REST Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-thredds.html">THREDDS Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-wfs-features.html">WFS GetFeature Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/harvesting-z3950.html">Z3950 Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#mechanism-overview">Mechanism overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvesting-life-cycle">Harvesting life cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#multiple-harvesting-and-hierarchies">Multiple harvesting and hierarchies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvesting-fragments-of-metadata-to-support-re-use">Harvesting Fragments of Metadata to support re-use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#https-support">HTTPS support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#the-main-page">The main page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvesting-status-and-error-icons">Harvesting Status and Error Icons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvesting-result-tips">Harvesting result tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#adding-new-harvesters">Adding new harvesters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/harvesting/index.html#harvest-history">Harvest History</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../user-guide/export/index.html">Exporting records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/export/index.html#export-as-a-zip-archive">Export as a ZIP archive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user-guide/export/index.html#export-as-a-csv-file">Export as a CSV file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Configuring the catalog</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="system-configuration.html">System configuration</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">User Interface Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="css-configuration.html">Configuring CSS &amp; Style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csw-configuration.html">Configuring CSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="portal-configuration.html">Portal configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="virtual-csw-configuration.html">Configuring virtual CSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inspire-configuration.html">Configuring for the INSPIRE Directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="map-server-configuration.html">Map servers configuration for geopublication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../managing-users-and-groups/index.html">Managing users and groups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/creating-group.html">Creating group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/creating-user.html">Creating user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/user-self-registration.html">User Self-Registration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/authentication-mode.html">Authentication mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/index.html#default-user">Default user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/index.html#user-session">User session</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-users-and-groups/index.html#users-groups-and-roles">Users, Groups and Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../managing-classification-systems/index.html">Managing classification system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../managing-classification-systems/managing-categories.html">Managing categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-classification-systems/managing-directories.html">Managing directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-classification-systems/managing-thesaurus.html">Managing thesaurus</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../managing-metadata-standards/index.html">Managing metadata &amp; template</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../managing-metadata-standards/standards.html">Managing metadata standards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-metadata-standards/configure-validation.html">Configuring validation levels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../managing-metadata-standards/metadata-identifier.html">Configuring metadata identifier</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../maintainer-guide/index.html">Maintainer guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maintainer-guide/statistics/index.html">Setting up search/content statistics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/statistics/setup-elasticsearch.html">Setup ElasticSearch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/statistics/setup-kibana.html">Setup Kibana</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/statistics/setup-geonetwork.html">Setup GeoNetwork</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../maintainer-guide/updating/index.html">Updating the application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/updating/automatic-update.html">Automatic update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/updating/manual-update.html">Manual update</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../maintainer-guide/backup/index.html">Backup the application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maintainer-guide/production-use/index.html">Production use</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/production-use/index.html#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/production-use/index.html#java-container">Java container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/production-use/index.html#data-folder">Data folder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/production-use/index.html#memory">Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/production-use/index.html#scaling">Scaling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/production-use/index.html#geonetwork-and-docker">GeoNetwork and Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/production-use/index.html#web-proxy">Web Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../maintainer-guide/production-use/index.html#web">WEB</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/the-geonetwork-api.html">GeoNetwork API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/the-geonetwork-api.html#using-the-api-to-apply-an-xsl-process">Using the API to apply an XSL process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/the-geonetwork-api.html#building-client-for-the-api-using-codegen">Building client for the API using codegen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/csw.html">Catalog Service for the Web (CSW)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/csw.html#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/csw.html#url">URL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/csw.html#requests">Requests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/opensearch.html">OpenSearch and INSPIRE ATOM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/opensearch.html#opensearch">OpenSearch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/opensearch.html#inspire-atom">INSPIRE ATOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/q-search.html">Q Search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/q-search.html#query-results-parameters">Query results parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/q-search.html#query-filter-parameters">Query filter parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/q-search.html#date-searches">Date Searches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/q-search.html#query-examples">Query examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/rdf-dcat.html">RDF DCAT end point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/rdf-dcat.html#urls">URLS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/rdf-dcat.html#query-parameters">Query parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/oai-pmh.html">Open Archive Initiative (OAI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/z39-50.html">Z39-50</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/writing-documentation.html">Writing documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/writing-documentation.html#building-the-docs">Building the docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/writing-documentation.html#building-the-standards-docs">Building the standards docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/writing-documentation.html#editing-the-restructuredtext-files">Editing the reStructuredText files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/writing-documentation.html#id2">Sphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/writing-documentation.html#translating-the-doc">Translating the doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/style-guide.html">Style Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing/style-guide.html#preferred-terminology">Preferred Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/translating.html">Translating the application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/translating.html#translating-a-standard">Translating a standard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/making-a-pull-request.html">Making a pull request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/doing-a-release.html">Doing a GeoNetwork release</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../customizing-application/index.html">Customizing guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/search-ui/index.html">Search application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/loadview.html">Create your own view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/configdefault.html">Change default view configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/customview.html">Create your own view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/enrichview.html">Enrich your custom view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/search-ui/wro4jdependencies.html">Wro4j resource management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/creating-custom-view.html">Customizing metadata views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html">Customizing editor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#defining-field-type">Defining field type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#grouping-element-from-the-standards">Grouping element from the standards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#defining-multilingual-fields">Defining multilingual fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#configuring-views">Configuring views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#defining-a-view">Defining a view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#defining-a-tab">Defining a tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-section-to-a-tab">Adding a section to a tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-field">Adding a field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-template-based-field">Adding a template based field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-documentation-or-help">Adding documentation or help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-button">Adding a button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/editor-ui/creating-custom-editor.html#adding-a-group">Adding a group</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/changing-layout.html">Theming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/configuring-search-fields.html">Configuring search fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-search-fields.html#add-a-search-field">Add a search field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-search-fields.html#boosting-documents-and-fields">Boosting documents and fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-search-fields.html#boosting-search-results">Boosting search results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/configuring-faceted-search.html">Configuring faceted search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-faceted-search.html#facet-principle">Facet principle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-faceted-search.html#facet-response-when-searching">Facet response when searching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/configuring-faceted-search.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/advanced-configuration.html">Advanced configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/advanced-configuration.html#user-session-timeout-configuration">User session timeout configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/adding-static-pages.html">Adding static pages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/adding-static-pages.html#examples-of-api-usage">Examples of API usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/implementing-a-schema-plugin.html">Implementing schema plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/implementing-a-schema-plugin.html#metadata-schemas-and-profiles">Metadata schemas and profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/implementing-a-schema-plugin.html#implementing-a-metadata-schema-or-profile">Implementing a metadata schema or profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/implementing-a-schema-plugin.html#schema-plugins">Schema Plugins</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/characterset.html">Characterset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customizing-application/misc.html">Miscellaneous</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/misc.html#invalid-csrf-token">Invalid CSRF Token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../customizing-application/misc.html#using-the-h2-database">Using the H2 database</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/introduction/index.html">Introduction to GeoNetwork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/introduction/deployment/index.html">Deployment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/introduction/setup/index.html">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/introduction/edit/index.html">Editing Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/introduction/harvesting/index.html">Harvesting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/customui/index.html">Customize your GeoNetwork UI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/customui/search/index.html">Search page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/customui/view/index.html">Formatter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/hookcustomizations/index.html">Hook your own code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/hookcustomizations/newproject/index.html">Separate your code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/hookcustomizations/events/index.html">Using Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/hookcustomizations/ui/index.html">Adding new User Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/hookcustomizations/schemaplugins/index.html">Schema Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/hookcustomizations/searchfields/index.html">Search Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/inspire/index.html">Tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/inspire/view-geoserver.html">Tutorial setting up INSPIRE view service with GeoNetwork and GeoServer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/inspire/view-mapserver.html">Tutorial setting up INSPIRE view service with GeoNetwork and Mapserver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/inspire/download-atom.html">Tutorial setting up an Atom/OpenSearch based INSPIRE download service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tutorials/inspire/download-geoserver.html">Tutorial setting up a WFS based INSPIRE download service with GeoServer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../annexes/index.html">Annexes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../annexes/mef-format.html">Metadata Exchange Format (MEF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../annexes/gallery/gallery.html">Some GeoNetwork nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../annexes/glossary/index.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../annexes/standards/index.html">Standards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../annexes/standards/iso19115-3.2018.html">Geographic information – Metadata (iso19115-3.2018)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../annexes/standards/iso19139.html">Geographic information – Metadata (iso19139:2007) (iso19139)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../annexes/standards/iso19110.html">Geographic information – Methodology for feature cataloguing (iso19110)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../annexes/standards/dublin-core.html">Dublin core (dublin-core)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">GeoNetwork opensource</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Administrator guide</a> &raquo;</li>
+      
+          <li><a href="index.html">Configuring the catalog</a> &raquo;</li>
+      
+    <li>User Interface Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/geosource-catalogue/doc/blob/develop/source/administrator-guide/configuring-the-catalog/user-interface-configuration.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <section id="user-interface-configuration">
+<span id="id1"></span><h1>User Interface Configuration<a class="headerlink" href="#user-interface-configuration" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Most of the configuration parameters for the user interface can be changed by an administrator
+using the web interface in <code class="docutils literal notranslate"><span class="pre">Admin</span> <span class="pre">console</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Settings</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">Interface</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Configuration of these parameters is critically important
+for the catalog in an operational context. Misunderstanding
+some settings may result in a system that does not function as
+expected. For example, the map can become unusable.</p>
+</div>
+<figure class="align-default">
+<img alt="../../_images/ui-settings.png" src="../../_images/ui-settings.png" />
+</figure>
+<p>By default the catalog will use the default UI configuration, named <code class="docutils literal notranslate"><span class="pre">srv</span></code>. To view and edit the settings for this configuration, choose <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">a</span> <span class="pre">default</span> <span class="pre">UI</span> <span class="pre">configuration</span></code>.</p>
+<p>To add a new configuration, such as for a sub-portal (see <a class="reference internal" href="portal-configuration.html#portal-configuration"><span class="std std-ref">Portal configuration</span></a>) choose <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">new</span> <span class="pre">UI</span> <span class="pre">configuration</span></code> and choose  one or more  portal identifiers from the dropdown list <code class="docutils literal notranslate"><span class="pre">UI</span> <span class="pre">Configuration</span> <span class="pre">identifier</span></code>. Additional configurations can also be used for building an external JS application, which is able to load a specific configuration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the settings form is a long form, the <code class="docutils literal notranslate"><span class="pre">save</span></code> button is repeated at the base of the page. In either case, all settings are saved.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Filter settings</strong>: This search box can be used to filter settings in the form, for example searching for « social » will show only the settings related to the Social Bar.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-filter.png" src="../../_images/ui-settings-filter.png" />
+</figure>
+<section id="general-options">
+<h2>General options<a class="headerlink" href="#general-options" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Humanize dates</strong>: check this box to show dates in a human-friendly format. If not set, the full date will be shown.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-humanizedate.png" src="../../_images/ui-settings-humanizedate.png" />
+</figure>
+</section>
+<section id="footer">
+<span id="user-interface-config-footer"></span><h2>Footer<a class="headerlink" href="#footer" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Footer</strong>: Select this checkbox to determine whether the GeoNetwork footer is shown. If not set, no footer will be visible.</p></li>
+<li><p><strong>Social bar</strong>: Select this check box to show the social bar (links to twitter, facebook, linkedin etc) in the footer.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-footer.png" src="../../_images/ui-settings-footer.png" />
+</figure>
+</section>
+<section id="top-toolbar">
+<span id="user-interface-config-toptoolbar"></span><h2>Top Toolbar<a class="headerlink" href="#top-toolbar" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Top toolbar</strong>: Select this check box to determine whether the GeoNetwork top toolbar will be shown. If not set, no toolbar will be visible.</p></li>
+<li><p><strong>List of languages</strong>: Choose the languages from the list that should be available for translating the interface strings (available from the dropdown list in the top toolbar). If only one language remains, then no dropdown will be shown. Note that additional languages can be added, if translations are available, by selecting the <code class="docutils literal notranslate"><span class="pre">+</span></code> button below the list and adding the appropriate ISO codes.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-toptoolbar.png" src="../../_images/ui-settings-toptoolbar.png" />
+</figure>
+<ul class="simple">
+<li><p><strong>Show the logo in the header</strong>: This determines where the catalog logo should be positioned. If selected, the logo will be positioned in the header, above the top toolbar and the toolbar logo (default) removed. If unset, the logo will appear in the top toolbar.</p></li>
+<li><p><strong>Position of logo</strong>: These options determine where on the header the logo will be positioned.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-toptoolbarlogo.png" src="../../_images/ui-settings-toptoolbarlogo.png" />
+</figure>
+</section>
+<section id="home-page">
+<span id="user-interface-config-homepage"></span><h2>Home Page<a class="headerlink" href="#home-page" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Home page</strong>: Select this check box to determine whether the Logo and Link to the Home Page are visible in the top toolbar. If not set, no logo and link is shown.</p></li>
+<li><p><strong>Application URL</strong>: Define the URL for the home page. In the majority of cases this can be left as the default.</p></li>
+<li><p><strong>Fluid container for Home and Search</strong>: Select this check box to determine whether the search box is full width in the browser page or if it is fixed width and centred.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-homepage.png" src="../../_images/ui-settings-homepage.png" />
+</figure>
+</section>
+<section id="search-application">
+<span id="user-interface-config-searchpage"></span><h2>Search application<a class="headerlink" href="#search-application" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Search application</strong>: Select this check box to determine whether the search application is visible in the top toolbar. If not set, no link is shown.</p></li>
+<li><p><strong>Application URL</strong>: Define the URL for the search application. In the majority of cases this can be left as the default.</p></li>
+<li><p><strong>Number of records per page</strong>: Define the options to determine the number of records shown per page of results, and the default.</p></li>
+<li><p><strong>Type of facet</strong>: Define the set of search facets should be visible in the search page. The default is <code class="docutils literal notranslate"><span class="pre">details</span></code> but <code class="docutils literal notranslate"><span class="pre">manager</span></code> can be used to show the facets more normally used on the editor page.</p></li>
+<li><p><strong>Default search</strong>: Define a default filter for the search.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-searchpage.png" src="../../_images/ui-settings-searchpage.png" />
+</figure>
+<ul class="simple">
+<li><p><strong>Facet field to display using tabs</strong>: This option creates a tab for each configured facet above the search results. This can be used to further narrow down the search results. The list of facet names can be found at <a class="reference external" href="https://github.com/geonetwork/core-geonetwork/blob/master/web/src/main/webapp/WEB-INF/config-summary.xml#L82">https://github.com/geonetwork/core-geonetwork/blob/master/web/src/main/webapp/WEB-INF/config-summary.xml#L82</a>. For example, to include the Topic Category filter above the search results, the administrator would add <code class="docutils literal notranslate"><span class="pre">topicCat</span></code> as the facet field to display.</p></li>
+<li><p><strong>List of facets</strong>: This can be used to restrict the facets available for searching. For example, adding <code class="docutils literal notranslate"><span class="pre">topicCat</span></code> to this list would restrict the search options to <code class="docutils literal notranslate"><span class="pre">Topic</span> <span class="pre">Category</span></code> only. This can be useful for restricting the search options in a sub-portal or external web application. To add additional facets to the list, select the blue <code class="docutils literal notranslate"><span class="pre">+</span></code> button.</p></li>
+<li><p><strong>Filters</strong>: Define additional search criteria added to all searches and again are used primarily for external applications and sub-portals.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-searchpage2.png" src="../../_images/ui-settings-searchpage2.png" />
+</figure>
+<ul class="simple">
+<li><p><strong>Type of sort options</strong>: Define the different ways by which a user can sort a set of search results. The <strong>default sort by option</strong> is shown below. Note that to search for example on <code class="docutils literal notranslate"><span class="pre">title</span></code> in alphabetical order it is necessary to set the order to <code class="docutils literal notranslate"><span class="pre">reverse</span></code>.</p></li>
+<li><p><strong>List of templates for search results</strong>: This section allows the administrator to configure templates for the layout of the search results. The default is <code class="docutils literal notranslate"><span class="pre">grid</span></code> whereas <code class="docutils literal notranslate"><span class="pre">list</span></code> is the default for the editor board.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-searchpage3.png" src="../../_images/ui-settings-searchpage3.png" />
+</figure>
+<ul class="simple">
+<li><p><strong>Default template used for search results</strong>: Define the template page for the search. Generally this can be left as the default.</p></li>
+<li><p><strong>List of formatter for record view</strong>: Determine the formatter used to display the search results. See <a class="reference internal" href="../../customizing-application/creating-custom-view.html#creating-custom-view"><span class="std std-ref">Customizing metadata views</span></a> for information on creating a new formatter. To add an additional view, click the blue <code class="docutils literal notranslate"><span class="pre">+</span></code> button below the list and provide a name and a URL.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-searchpage3.png" src="../../_images/ui-settings-searchpage3.png" />
+</figure>
+<section id="search-results-configuration">
+<span id="user-interface-config-searchresults"></span><h3>Search results configuration<a class="headerlink" href="#search-results-configuration" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Related metadata types to query</strong>: Use this section to define the metadata types displayed when showing showing search results in the grid. format To add additional types, click the blue <code class="docutils literal notranslate"><span class="pre">+</span></code> button. The possible types are shown below the form.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-searchresults.png" src="../../_images/ui-settings-searchresults.png" />
+</figure>
+</section>
+<section id="list-of-link-types">
+<span id="user-interface-config-linktypes"></span><h3>List of link types<a class="headerlink" href="#list-of-link-types" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Links</strong>: This section determines the types of links displayed when showing search results in the grid format. They are separated into <code class="docutils literal notranslate"><span class="pre">links</span></code>, <code class="docutils literal notranslate"><span class="pre">downloads</span></code>, <code class="docutils literal notranslate"><span class="pre">layers</span></code> and <code class="docutils literal notranslate"><span class="pre">maps</span></code> and for each type, a new entry can be added by clicking the blue <code class="docutils literal notranslate"><span class="pre">+</span></code> button below the list.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-searchresults2.png" src="../../_images/ui-settings-searchresults2.png" />
+</figure>
+<ul class="simple">
+<li><p><strong>Display filter tags in the search results</strong>: When checked, the filter tags are visible above the search results. The default is to not show them.</p></li>
+</ul>
+</section>
+<section id="user-custom-searches">
+<span id="user-interface-customsearches"></span><h3>User custom searches<a class="headerlink" href="#user-custom-searches" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Enabled</strong>: If checked the user will have the ability to create and save custom searches in the search tab. This functionality will be visible above the facets list on the left.</p></li>
+<li><p><strong>Display featured user searches panel in home page</strong>: If this is also enabled, an additional tab will be shown on the home page alongside <code class="docutils literal notranslate"><span class="pre">Latest</span> <span class="pre">news</span></code> and <code class="docutils literal notranslate"><span class="pre">Most</span> <span class="pre">popular</span></code>.</p></li>
+</ul>
+</section>
+<section id="saved-selections">
+<h3>Saved Selections<a class="headerlink" href="#saved-selections" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Enabled</strong>: If checked the user will have the ability to save a selection of records in the search tab.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-searchresults3.png" src="../../_images/ui-settings-searchresults3.png" />
+</figure>
+</section>
+</section>
+<section id="map-application">
+<span id="user-interface-config-mappage"></span><h2>Map Application<a class="headerlink" href="#map-application" title="Lien permanent vers ce titre">¶</a></h2>
+<p>This section describes how an administrator can configure the different maps in the user interface (the main map, the mini map displayed on the search result page, and the map used in the editor to draw an extent).</p>
+<ul class="simple">
+<li><p><strong>Map Application</strong>: The initial checkbox allows the main map tab to be disabled. In this case there will be no map tab shown in the top toolbar but the mini map and extent map described above will still be visible.</p></li>
+<li><p><strong>Application URL</strong>: This defines the URL for the map tab. In the majority of cases this can be left as the default.</p></li>
+</ul>
+<section id="external-viewer">
+<h3>External viewer<a class="headerlink" href="#external-viewer" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Use an external viewer</strong>: This option allows a third party mapping application to be used in place of the default GeoNetwork map. In this case, most of the settings below will no longer be used.</p></li>
+<li><p><strong>Allow 3D mode</strong>:  If enabled, the user has the option to switch to 3D mode in the main map (see <a class="reference internal" href="../../user-guide/quick-start/index.html#quick-start"><span class="std std-ref">Quick start</span></a>).</p></li>
+<li><p><strong>Allow users to save maps as metadata record</strong>: This option enables users to save layers and base maps configuration as a record in the catalog. Optionally users can add a title and an abstract.</p></li>
+<li><p><strong>Export map as image</strong>:  If enabled, users can export the map as an image but requires CORS to be enabled on any external WMS services displayed on the map. This option is disabled by default to avoid issues with WMS layers.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-mappage.png" src="../../_images/ui-settings-mappage.png" />
+</figure>
+<ul class="simple">
+<li><p><strong>User preference persistence</strong>: This option determines the behaviour of cookies related to the map. The various options are listed below.</p></li>
+<li><p><strong>Bing Map Key</strong>: If this option is filled in, then it is possible to use Bing Maps as base layers within the map application. You must get your own key for this to work.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-mappage2.png" src="../../_images/ui-settings-mappage2.png" />
+</figure>
+</section>
+<section id="list-of-preferred-ogc-services">
+<h3>List of preferred OGC services<a class="headerlink" href="#list-of-preferred-ogc-services" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Default <strong>wms</strong> and <strong>wmts</strong> services can be defined here that will be available by default to the end user. New services can be added using the blue <code class="docutils literal notranslate"><span class="pre">+</span></code> button below the protocol lists.</p>
+<p>You can configure each map with different layers and projections.</p>
+<ul class="simple">
+<li><p><strong>Map Projection</strong> This is the default projection of the map. Make sure the projection is defined in <strong>Projections to display maps into</strong> below.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-mapprojection.png" src="../../_images/ui-settings-mapprojection.png" />
+</figure>
+<ul class="simple">
+<li><p><strong>List of map projections to display bounding box coordinates in</strong>  This is used in the map when editing a record and defining the bounding box extent. Note that the coordinates will be stored in WGS84 regardless of the projection used to draw them.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-mapprojectionslist.png" src="../../_images/ui-settings-mapprojectionslist.png" />
+</figure>
+<ul class="simple">
+<li><p><strong>Projections to display maps into</strong> This is where the different projections available to the map are defined. All projections will be shown in the <code class="docutils literal notranslate"><span class="pre">Projection</span> <span class="pre">Switcher</span></code> tool of the map.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-mapprojection2.png" src="../../_images/ui-settings-mapprojection2.png" />
+</figure>
+<p>In order to enable a new projection it must be defined here using the <strong>proj4js</strong> syntax, which can be found at <a class="reference external" href="https://proj4js.io">https://proj4js.io</a>. Additionally the default bounding box extent, maximim bounding box extent, and allowed resolutions (if required) can be defined.</p>
+<p>Ensure that the coordinates inserted are in the correct units for and are local to the projection. A list of resolutions is only relevant if the main map layer has a XYZ source, which does not follow the common tiling pattern.</p>
+<p>Check that this configuration is valid by opening the map.</p>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-mapprojection3.png" src="../../_images/ui-settings-mapprojection3.png" />
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the configuration of a projection is incomplete or invalid, the map may fail to load.</p>
+</div>
+<p>If a projection is defined which is not supported by the source of the map layer, the map application will reproject map images at the client side. This may cause unexpected behaviour, such as rotated or distorted labels.</p>
+<ul class="simple">
+<li><p><strong>Optional Map Viewer Tools</strong> The checkboxes in this section define the tools available to the user in the right toolbar of the main map. Elements that are not checked are not visible.</p></li>
+<li><p><strong>OGC Service to use as a graticule</strong>: This is optional and allows the use of an external service to display the graticule on the map.</p></li>
+</ul>
+</section>
+<section id="viewer-map-configuration">
+<span id="user-interface-config-viewermap"></span><h3>Viewer Map Configuration<a class="headerlink" href="#viewer-map-configuration" title="Lien permanent vers ce titre">¶</a></h3>
+<p>This section is for configuring the map shown when viewing a record.</p>
+<ul class="simple">
+<li><p><strong>Path to the context file (XML)</strong>: An optional path to an XML file defining base layers and other configuration options. See <a class="reference external" href="https://github.com/geonetwork/core-geonetwork/tree/master/web/src/main/webapp/WEB-INF/data/data/resources/map/config-viewer.xml">source file web/src/main/webapp/WEB-INF/data/data/resources/map/config-viewer.xml</a> for an example.</p></li>
+<li><p><strong>Extent, expressed in current projection</strong>: Use this option to override the extent defined in the context file.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-mapviewer.png" src="../../_images/ui-settings-mapviewer.png" />
+</figure>
+<ul class="simple">
+<li><p><strong>Layer objects in JSON</strong>: Define additional layers to be shown on the map using JSON syntax. The supported types are:</p>
+<ul>
+<li><p><strong>wms</strong>: generic WMS layer, required properties: <code class="docutils literal notranslate"><span class="pre">name,</span> <span class="pre">url</span></code>.</p></li>
+<li><p><strong>wmts</strong>: generic WMTS layer, required properties: <code class="docutils literal notranslate"><span class="pre">name,</span> <span class="pre">url</span></code>.</p></li>
+<li><p><strong>tms</strong>: generic TMS layer, required property: <code class="docutils literal notranslate"><span class="pre">url</span></code>.</p></li>
+<li><p><strong>osm</strong>: OpenStreetMap default layer, no other property required.</p></li>
+<li><p><strong>stamen</strong>: Stamen layers, required property: <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p></li>
+<li><p><strong>bing_aerial</strong>: Bing Aerial background, required property: <code class="docutils literal notranslate"><span class="pre">key</span></code> containing the license key.</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-mapviewerlayers.png" src="../../_images/ui-settings-mapviewerlayers.png" />
+</figure>
+<p>All layers can also have some optional extra properties:</p>
+<ul class="simple">
+<li><p><strong>title</strong> The title/label of the layer.</p></li>
+<li><p><strong>projectionList</strong>  Projection array to restrict this layer to certain projections on the map.</p></li>
+</ul>
+<p>Examples of layers:</p>
+<p>This layer will use OpenStreetMap Stamen style, but only when the map is in <code class="docutils literal notranslate"><span class="pre">EPSG:3857</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;stamen&quot;</span><span class="p">,</span><span class="nt">&quot;projectionList&quot;</span><span class="p">:[</span><span class="s2">&quot;EPSG:3857&quot;</span><span class="p">]}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This WMS layer will be shown but only when the map is on <code class="docutils literal notranslate"><span class="pre">EPSG:4326</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;wms&quot;</span><span class="p">,</span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;OI.OrthoimageCoverage&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;OI.OrthoimageCoverage&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;http://www.ign.es/wms-inspire/pnoa-ma?request=GetCapabilities&amp;service=WMS&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;projectionList&quot;</span><span class="p">:[</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">]}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="search-map-configuration">
+<h3>Search Map Configuration<a class="headerlink" href="#search-map-configuration" title="Lien permanent vers ce titre">¶</a></h3>
+<p>This section defines the configuration for the mini map shown on the search page. It uses the same options as in <a class="reference internal" href="#user-interface-config-viewermap"><span class="std std-ref">Viewer Map Configuration</span></a>.</p>
+</section>
+<section id="editor-map-configuration">
+<h3>Editor Map Configuration<a class="headerlink" href="#editor-map-configuration" title="Lien permanent vers ce titre">¶</a></h3>
+<p>This section defines the configuration for the map shown when editing a record. It uses the same options as in <a class="reference internal" href="#user-interface-config-viewermap"><span class="std std-ref">Viewer Map Configuration</span></a>.</p>
+</section>
+</section>
+<section id="gazetteer">
+<h2>Gazetteer<a class="headerlink" href="#gazetteer" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Gazetteer</strong>: If enabled a gazetteer will be shown in the top left of the main map.</p></li>
+<li><p><strong>Application URL</strong>: Set the application URL used for the gazetteer. In general this should be left as the default, but additional filtering can be applied using the syntax described at <a class="reference external" href="https://www.geonames.org/export/geonames-search.html">https://www.geonames.org/export/geonames-search.html</a>, for example to restrict results to a particular country (<code class="docutils literal notranslate"><span class="pre">country=FR</span></code>).</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-gazzetteer.png" src="../../_images/ui-settings-gazzetteer.png" />
+</figure>
+</section>
+<section id="record-view">
+<h2>Record View<a class="headerlink" href="#record-view" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Record view</strong>:</p></li>
+<li><p><strong>Show Social bar</strong>: If enabled the social bar (links to facebook, twitter etc) are enabled in record view.</p></li>
+</ul>
+</section>
+<section id="editor-application">
+<h2>Editor Application<a class="headerlink" href="#editor-application" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Editor application</strong>: If enabled the editor page, or contribute tab is available to users with the appropriate privileges. If not enabled the contribute tab is not shown in the top toolbar.</p></li>
+<li><p><strong>Application URL</strong>: This is the URL to the editor application and can generally be left as the default.</p></li>
+<li><p><strong>Only my records</strong>: If this checkbox is enabled then the « Only my records » checkbox in the editor dashboard will be checked by default.</p></li>
+<li><p><strong>Display filters in dashboard</strong>: If enabled, the currently selected facets will be shown above the search results in both the editor dashboard the batch editor page.</p></li>
+<li><p><strong>Fluid container for the Editor</strong>: If enabled, the editor application will have a full width container. If disabled it will have a fixed width and centered container.</p></li>
+<li><p><strong>New metadata page layout</strong>: Choose from the options for the layout of the <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">new</span> <span class="pre">metadata</span></code> page. The default is <code class="docutils literal notranslate"><span class="pre">Horizontal</span></code> but a vertical layout can be chosen, or a custom layout based on a supplied template.</p></li>
+<li><p><strong>Editor page indent type</strong>: Choose from the options for the indent style when editing a record. The default is for minimal indents, select <code class="docutils literal notranslate"><span class="pre">Colored</span> <span class="pre">indents</span></code> to use the style shown below:</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-indent.png" src="../../_images/ui-settings-indent.png" />
+</figure>
+</section>
+<section id="admin-console">
+<h2>Admin console<a class="headerlink" href="#admin-console" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Admin console</strong>:</p></li>
+<li><p><strong>Application URL</strong>: Set the application URL for the admin console. In general this should be left as the default.</p></li>
+</ul>
+</section>
+<section id="sign-in-application">
+<h2>Sign in application<a class="headerlink" href="#sign-in-application" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Sign in application</strong>:</p></li>
+<li><p><strong>Application URL</strong>: Set the application URL for the sign in page. In general this should be left as the default.</p></li>
+</ul>
+</section>
+<section id="sign-out-application">
+<h2>Sign out application<a class="headerlink" href="#sign-out-application" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Application URL</strong>: Set the application URL for the sign out. In general this should be left as the default.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>Search application<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Search application</strong>:</p></li>
+<li><p><strong>Application URL</strong>: Set the application URL for the search page. In general this should be left as the default.</p></li>
+</ul>
+</section>
+<section id="json-configuration">
+<h2>JSON Configuration<a class="headerlink" href="#json-configuration" title="Lien permanent vers ce titre">¶</a></h2>
+<p>This section shows the JSON configuration for the currently applied User Interface settings. From here, the json can be saved to a file (by copying and pasting).</p>
+<ul class="simple">
+<li><p><strong>Test client configuration</strong>: Click this button to test the configuration in a new browser tab.</p></li>
+<li><p><strong>Reset configuration</strong>: Click this button to reset the configuration back to the default. Note that this will revert any changes you have made in the above page.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/ui-settings-json.png" src="../../_images/ui-settings-json.png" />
+</figure>
+</section>
+</section>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="css-configuration.html" class="btn btn-neutral float-right" title="Configuring CSS &amp; Style" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="system-configuration.html" class="btn btn-neutral" title="System configuration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2001-2022, GeoNetwork opensource. Licensed under Creative Commons Attribution ShareAlike (Unported) v3.0 License.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'3.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            LINK_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

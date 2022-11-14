@@ -1,0 +1,751 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building from Source Code &mdash; GeoNetwork opensource v3.10 GeoNetwork Documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="GeoNetwork opensource v3.10 GeoNetwork Documentation" href="../index.html"/>
+        <link rel="up" title="Installation guide" href="index.html"/>
+        <link rel="next" title="Installing remote index" href="installing-index.html"/>
+        <link rel="prev" title="Installing using a WAR file" href="installing-from-war-file.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> GeoNetwork opensource
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/about.html">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/authors.html">Author</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/authors.html#project-steering-committee-psc">Project Steering Committee (PSC)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/authors.html#committers">Committers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/authors.html#contributors">Contributors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/authors.html#the-documentation">The documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/change-log/index.html">Change log</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.0.0.html">Version 3.0.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.0.1.html">Version 3.0.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.0.2.html">Version 3.0.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.0.3.html">Version 3.0.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.0.4.html">Version 3.0.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.2.0.html">Version 3.2.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.2.1.html">Version 3.2.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.2.2.html">Version 3.2.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.4.0.html">Version 3.4.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.4.1.html">Version 3.4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.4.2.html">Version 3.4.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.4.3.html">Version 3.4.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.4.4.html">Version 3.4.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.6.0.html">Version 3.6.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.8.0.html">Version 3.8.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.8.1.html">Version 3.8.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.8.2.html">Version 3.8.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.8.3.html">Version 3.8.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.10.0.html">Version 3.10.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.10.1.html">Version 3.10.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.10.2.html">Version 3.10.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/change-log/version-3.10.3.html">Version 3.10.3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installing-from-zip.html">Installing using a ZIP file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing-from-war-file.html">Installing using a WAR file</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Building from Source Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tools">Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-running">Building &amp; Running</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="https://geonetwork-opensource.org/downloads.html#third-party-distributions">Installing a third-party distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing-index.html">Installing remote index</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installing-index.html#manual-installation">Manual installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installing-index.html#install-using-maven">Install using Maven</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installing-index.html#check-installation">Check installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installing-index.html#configure-connection">Configure connection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuring-database.html">Configuring the database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizing-data-directory.html">Customizing the data directory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="customizing-data-directory.html#creating-a-new-data-directory">Creating a new data directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customizing-data-directory.html#setting-the-data-directory">Setting the data directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customizing-data-directory.html#java-system-property">Java System Property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customizing-data-directory.html#bean-configuration">Bean configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customizing-data-directory.html#using-a-s3-object-storage">Using a S3 object storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customizing-data-directory.html#structure-of-the-data-directory">Structure of the data directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customizing-data-directory.html#advanced-data-directory-configuration">Advanced data directory configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customizing-data-directory.html#check-the-configuration">Check the configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="using-multinode-mode.html">Using multinode mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="using-multinode-mode.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using-multinode-mode.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="map-print-setup.html">Configuring printing of the map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loading-samples.html">Loading templates and sample data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="loading-samples.html#signing-in-and-loading-templates">Signing in and loading templates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">User guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/quick-start/index.html">Quick start</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/quick-start/index.html#starting-the-catalog">Starting the catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/quick-start/index.html#signing-in-and-load-templates">Signing in and load templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/quick-start/index.html#searching-information">Searching information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/quick-start/index.html#discovering-information">Discovering information</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/map/index.html">Maps and dataset visualisation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/map/index.html#map-viewer">Map viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/map/index.html#store-and-share-maps">Store and share maps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/describing-information/index.html">Describing information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/describing-information/managing-templates.html">Creating templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/describing-information/creating-metadata.html">Creating a new record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/describing-information/importing-metadata.html">Importing a new record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/describing-information/editing-metadata.html">Editing metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/describing-information/deleting-metadata.html">Deleting a record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/describing-information/multilingual-editing.html">Multilingual editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/describing-information/inspire-editing.html">Describing resources for the INSPIRE directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/describing-information/inspire-editing.html#migrating-from-technical-guidance-version-1-3-to-version-2-0">Migrating from Technical guidance version 1.3 to version 2.0</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/associating-resources/index.html">Associating resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/associating-resources/linking-documents.html">Associating documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/associating-resources/linking-records.html">Associating another record</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/associating-resources/doi.html">Digital Object Identifier (DOI)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/tag-information/index.html">Classify information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/tag-information/tagging-with-categories.html">Tagging with categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/tag-information/tagging-with-keywords.html">Tagging with keywords</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/publishing/index.html">Publishing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/publishing/managing-privileges.html">Managing privileges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/publishing/managing-privileges.html#setting-privileges">Setting Privileges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/publishing/restricting-information-to-metadata-sections.html">Restricting information to metadata sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/publishing/transferring-privileges.html">Transferring privileges</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/analyzing/index.html">Analyzing data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/analyzing/metadata.html">Statistics on catalog content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/analyzing/data.html">Analyze and visualize data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/workflow/index.html">Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/workflow/validation.html">Validating records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/workflow/suggestion.html">Suggestion for improving metadata content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/workflow/life-cycle.html">Life cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/workflow/geopublication.html">Publishing GIS data in a map server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/workflow/versioning.html">Versioning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/workflow/batchupdate.html">Updating a set of records</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/harvesting/index.html">Harvesting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/harvesting-geonetwork.html">GeoNetwork 2.0 Harvester</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/harvesting-csw.html">Harvesting CSW services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/harvesting-ogcwxs.html">Harvesting OGC Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/harvesting-filesystem.html">Local File System Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/harvesting-webdav.html">WEBDAV Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/harvesting-oaipmh.html">OAIPMH Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/harvesting-sde.html">Harvesting an ARCSDE Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/harvesting-geoportal.html">GeoPortal REST Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/harvesting-thredds.html">THREDDS Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/harvesting-wfs-features.html">WFS GetFeature Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/harvesting-z3950.html">Z3950 Harvesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/index.html#mechanism-overview">Mechanism overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/index.html#harvesting-life-cycle">Harvesting life cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/index.html#multiple-harvesting-and-hierarchies">Multiple harvesting and hierarchies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/index.html#harvesting-fragments-of-metadata-to-support-re-use">Harvesting Fragments of Metadata to support re-use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/index.html#https-support">HTTPS support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/index.html#the-main-page">The main page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/index.html#harvesting-status-and-error-icons">Harvesting Status and Error Icons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/index.html#harvesting-result-tips">Harvesting result tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/index.html#adding-new-harvesters">Adding new harvesters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/harvesting/index.html#harvest-history">Harvest History</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user-guide/export/index.html">Exporting records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/export/index.html#export-as-a-zip-archive">Export as a ZIP archive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide/export/index.html#export-as-a-csv-file">Export as a CSV file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator-guide/index.html">Administrator guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../administrator-guide/configuring-the-catalog/index.html">Configuring the catalog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/configuring-the-catalog/system-configuration.html">System configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/configuring-the-catalog/user-interface-configuration.html">User Interface Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/configuring-the-catalog/css-configuration.html">Configuring CSS &amp; Style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/configuring-the-catalog/csw-configuration.html">Configuring CSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/configuring-the-catalog/portal-configuration.html">Portal configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/configuring-the-catalog/virtual-csw-configuration.html">Configuring virtual CSW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/configuring-the-catalog/inspire-configuration.html">Configuring for the INSPIRE Directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/configuring-the-catalog/map-server-configuration.html">Map servers configuration for geopublication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrator-guide/managing-users-and-groups/index.html">Managing users and groups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-users-and-groups/creating-group.html">Creating group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-users-and-groups/creating-user.html">Creating user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-users-and-groups/user-self-registration.html">User Self-Registration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-users-and-groups/authentication-mode.html">Authentication mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-users-and-groups/index.html#default-user">Default user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-users-and-groups/index.html#user-session">User session</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-users-and-groups/index.html#users-groups-and-roles">Users, Groups and Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrator-guide/managing-classification-systems/index.html">Managing classification system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-classification-systems/managing-categories.html">Managing categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-classification-systems/managing-directories.html">Managing directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-classification-systems/managing-thesaurus.html">Managing thesaurus</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../administrator-guide/managing-metadata-standards/index.html">Managing metadata &amp; template</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-metadata-standards/standards.html">Managing metadata standards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-metadata-standards/configure-validation.html">Configuring validation levels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../administrator-guide/managing-metadata-standards/metadata-identifier.html">Configuring metadata identifier</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintainer-guide/index.html">Maintainer guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../maintainer-guide/statistics/index.html">Setting up search/content statistics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/statistics/setup-elasticsearch.html">Setup ElasticSearch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/statistics/setup-kibana.html">Setup Kibana</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/statistics/setup-geonetwork.html">Setup GeoNetwork</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../maintainer-guide/updating/index.html">Updating the application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/updating/automatic-update.html">Automatic update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/updating/manual-update.html">Manual update</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../maintainer-guide/backup/index.html">Backup the application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../maintainer-guide/production-use/index.html">Production use</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/production-use/index.html#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/production-use/index.html#java-container">Java container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/production-use/index.html#data-folder">Data folder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/production-use/index.html#memory">Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/production-use/index.html#scaling">Scaling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/production-use/index.html#geonetwork-and-docker">GeoNetwork and Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/production-use/index.html#web-proxy">Web Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../maintainer-guide/production-use/index.html#web">WEB</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/the-geonetwork-api.html">GeoNetwork API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/the-geonetwork-api.html#using-the-api-to-apply-an-xsl-process">Using the API to apply an XSL process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/the-geonetwork-api.html#building-client-for-the-api-using-codegen">Building client for the API using codegen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/csw.html">Catalog Service for the Web (CSW)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/csw.html#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/csw.html#url">URL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/csw.html#requests">Requests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/opensearch.html">OpenSearch and INSPIRE ATOM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/opensearch.html#opensearch">OpenSearch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/opensearch.html#inspire-atom">INSPIRE ATOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/q-search.html">Q Search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/q-search.html#query-results-parameters">Query results parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/q-search.html#query-filter-parameters">Query filter parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/q-search.html#date-searches">Date Searches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/q-search.html#query-examples">Query examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/rdf-dcat.html">RDF DCAT end point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/rdf-dcat.html#urls">URLS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/rdf-dcat.html#query-parameters">Query parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/oai-pmh.html">Open Archive Initiative (OAI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/z39-50.html">Z39-50</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/writing-documentation.html">Writing documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/writing-documentation.html#building-the-docs">Building the docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/writing-documentation.html#building-the-standards-docs">Building the standards docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/writing-documentation.html#editing-the-restructuredtext-files">Editing the reStructuredText files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/writing-documentation.html#id2">Sphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/writing-documentation.html#translating-the-doc">Translating the doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/style-guide.html">Style Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../contributing/style-guide.html#preferred-terminology">Preferred Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/translating.html">Translating the application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/translating.html#translating-a-standard">Translating a standard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/making-a-pull-request.html">Making a pull request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/doing-a-release.html">Doing a GeoNetwork release</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../customizing-application/index.html">Customizing guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../customizing-application/search-ui/index.html">Search application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/search-ui/loadview.html">Create your own view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/search-ui/configdefault.html">Change default view configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/search-ui/customview.html">Create your own view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/search-ui/enrichview.html">Enrich your custom view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/search-ui/wro4jdependencies.html">Wro4j resource management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../customizing-application/creating-custom-view.html">Customizing metadata views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html">Customizing editor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html#defining-field-type">Defining field type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html#grouping-element-from-the-standards">Grouping element from the standards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html#defining-multilingual-fields">Defining multilingual fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html#configuring-views">Configuring views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html#defining-a-view">Defining a view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html#defining-a-tab">Defining a tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html#adding-a-section-to-a-tab">Adding a section to a tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html#adding-a-field">Adding a field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html#adding-a-template-based-field">Adding a template based field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html#adding-documentation-or-help">Adding documentation or help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html#adding-a-button">Adding a button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/editor-ui/creating-custom-editor.html#adding-a-group">Adding a group</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../customizing-application/changing-layout.html">Theming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customizing-application/configuring-search-fields.html">Configuring search fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/configuring-search-fields.html#add-a-search-field">Add a search field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/configuring-search-fields.html#boosting-documents-and-fields">Boosting documents and fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/configuring-search-fields.html#boosting-search-results">Boosting search results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../customizing-application/configuring-faceted-search.html">Configuring faceted search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/configuring-faceted-search.html#facet-principle">Facet principle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/configuring-faceted-search.html#facet-response-when-searching">Facet response when searching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/configuring-faceted-search.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../customizing-application/advanced-configuration.html">Advanced configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/advanced-configuration.html#user-session-timeout-configuration">User session timeout configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../customizing-application/adding-static-pages.html">Adding static pages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/adding-static-pages.html#examples-of-api-usage">Examples of API usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../customizing-application/implementing-a-schema-plugin.html">Implementing schema plugins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/implementing-a-schema-plugin.html#metadata-schemas-and-profiles">Metadata schemas and profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/implementing-a-schema-plugin.html#implementing-a-metadata-schema-or-profile">Implementing a metadata schema or profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/implementing-a-schema-plugin.html#schema-plugins">Schema Plugins</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../customizing-application/characterset.html">Characterset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../customizing-application/misc.html">Miscellaneous</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/misc.html#invalid-csrf-token">Invalid CSRF Token</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customizing-application/misc.html#using-the-h2-database">Using the H2 database</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/introduction/index.html">Introduction to GeoNetwork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/introduction/deployment/index.html">Deployment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/introduction/setup/index.html">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/introduction/edit/index.html">Editing Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/introduction/harvesting/index.html">Harvesting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/customui/index.html">Customize your GeoNetwork UI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/customui/search/index.html">Search page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/customui/view/index.html">Formatter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hookcustomizations/index.html">Hook your own code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/hookcustomizations/newproject/index.html">Separate your code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/hookcustomizations/events/index.html">Using Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/hookcustomizations/ui/index.html">Adding new User Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/hookcustomizations/schemaplugins/index.html">Schema Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/hookcustomizations/searchfields/index.html">Search Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/inspire/index.html">Tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/inspire/view-geoserver.html">Tutorial setting up INSPIRE view service with GeoNetwork and GeoServer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/inspire/view-mapserver.html">Tutorial setting up INSPIRE view service with GeoNetwork and Mapserver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/inspire/download-atom.html">Tutorial setting up an Atom/OpenSearch based INSPIRE download service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/inspire/download-geoserver.html">Tutorial setting up a WFS based INSPIRE download service with GeoServer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../annexes/index.html">Annexes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../annexes/mef-format.html">Metadata Exchange Format (MEF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../annexes/gallery/gallery.html">Some GeoNetwork nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../annexes/glossary/index.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../annexes/standards/index.html">Standards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../annexes/standards/iso19115-3.2018.html">Geographic information – Metadata (iso19115-3.2018)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../annexes/standards/iso19139.html">Geographic information – Metadata (iso19139:2007) (iso19139)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../annexes/standards/iso19110.html">Geographic information – Methodology for feature cataloguing (iso19110)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../annexes/standards/dublin-core.html">Dublin core (dublin-core)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">GeoNetwork opensource</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Installation guide</a> &raquo;</li>
+      
+    <li>Building from Source Code</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/geosource-catalogue/doc/blob/develop/source/install-guide/installing-from-source-code.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <section id="building-from-source-code">
+<span id="installing-from-source-code"></span><h1>Building from Source Code<a class="headerlink" href="#building-from-source-code" title="Permalink to this headline">¶</a></h1>
+<section id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<section id="java-8">
+<h3>Java 8<a class="headerlink" href="#java-8" title="Permalink to this headline">¶</a></h3>
+<p>GeoNetwork is a Java 8 application that runs as a servlet, which means that a Java Development Kit
+(JDK) must be installed in order to build and run it.
+You can get a Java 8 JDK from your Linux distribution, <a class="reference external" href="http://openjdk.java.net/">Oracle OpenJDK</a> or <a class="reference external" href="https://adoptopenjdk.net">AdoptOpenJDK</a>. Please note that the Java 8 <a class="reference external" href="http://www.oracle.com/technetwork/java/javase/downloads">Oracle JDK</a> is currently only being distributed for testing purposes.</p>
+<p>Because GeoNetwork is developed with Java 8 (LTS), this has the following implications:</p>
+<ul class="simple">
+<li><p>GeoNetwork should not be developed with newer versions of Java.</p></li>
+<li><p>Java 11 (LTS) is <strong>not supported</strong> at this time.</p></li>
+<li><p>GeoNetwork won’t run at all with Java 7 (1.6) or earlier releases.</p></li>
+</ul>
+</section>
+<section id="application-server">
+<h3>Application Server<a class="headerlink" href="#application-server" title="Permalink to this headline">¶</a></h3>
+<p>Next, you need a servlet container. GeoNetwork ships with an embedded container, <a class="reference external" href="https://www.eclipse.org/jetty/">Eclipse Jetty</a>, which is fast and well-suited for most applications.</p>
+<p>If you need a more powerful container, we recommend <a class="reference external" href="http://tomcat.apache.org">Apache Tomcat</a>.
+Tomcat provides load balancing, fault tolerance and other production features. Apache Tomcat
+is widely used with many organizations standardizing on Tomcat for all their Java Web Applications.</p>
+<p>We recommend the following stable releases of Tomcat:</p>
+<ul class="simple">
+<li><p>Apache Tomcat 8.5</p></li>
+<li><p>Apache Tomcat 9.0</p></li>
+</ul>
+</section>
+<section id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<p>Regarding storage, you need a Database Management System (DBMS) like Oracle,
+MySQL, Postgresql etc. GeoNetwork comes with an embedded DBMS (H2) which is
+used by default during installation. This DBMS can be used for small or desktop
+installations of no more than a few thousand metadata records with one or
+two users. If you have heavier demands then you should use a professional, stand
+alone DBMS.</p>
+</section>
+<section id="environment">
+<h3>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h3>
+<p>Being written in Java, GeoNetwork can run on any platform that supports Java: primarily Linux, Windows and macOS.</p>
+<p>GeoNetwork is not resource intensive and will not require a powerful machine. Good performance can be
+obtained with 1GB of RAM. However, the suggested amount is 2GB of RAM.</p>
+<p>For hard disk space, you have to consider the space required for the application itself
+(about 350 MB) and the space required for data, which could grow up to 50 GB or
+more. A simple (SSD) disk of 250 GB should be sufficient in most cases. You also need some disk space
+for the search index which is located in <code class="docutils literal notranslate"><span class="pre">GEONETWORK_DATA_DIR/index</span></code>
+(by default GEONETWORK_DATA_DIR is <code class="docutils literal notranslate"><span class="pre">INSTALL_DIR/web/geonetwork/WEB_INF/data</span></code>).
+However, even with a few thousand metadata records, the index is small so usually
+500 MB of space is more than enough.</p>
+<p>The software runs in different ways depending on the servlet container you are using:</p>
+<ul class="simple">
+<li><p><em>Tomcat</em> - GeoNetwork is available as a WAR file which you can put into the Tomcat webapps directory. Tomcat will deploy the WAR file when it is started. You can then use the Tomcat manager web application to stop/start GeoNetwork. You can also use the startup.* and shutdown.* scripts located in the Tomcat bin directory (.* means .sh or .bat depending on your OS) but if you have other web applications in the Tomcat container, then they will also be affected.</p></li>
+<li><p><em>Jetty</em> - If you use the provided container you can use the scripts in GeoNetwork’s bin directory. The scripts are startup.* and shutdown.* and you must be inside the bin directory to run them. You can use these scripts just after installation.</p></li>
+</ul>
+</section>
+</section>
+<section id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<p>The following tools are required to be installed to setup a development environment for GeoNetwork:</p>
+<ul class="simple">
+<li><p><strong>Java 8</strong> - Developing with GeoNetwork requires Java Development Kit (JDK) 1.8.</p></li>
+<li><p><strong>Maven</strong> 3.1.0+ - GeoNetwork uses <a class="reference external" href="http://maven.apache.org/">Maven</a> to manage the build process and the dependencies. Once is installed, you should have the mvn command in your path (on Windows systems, you have to open a shell to check).</p></li>
+<li><p><strong>Git</strong> - GeoNetwork source code is stored and versioned in <a class="reference external" href="https://github.com/geonetwork/core-geonetwork">a Git repository on Github</a>. Depending on your operating system a variety of Git clients are available. Please check the Git website for some <a class="reference external" href="http://git-scm.com/downloads/guis">alternatives</a> and good <a class="reference external" href="http://git-scm.com/documentation">documentation</a>. More documentation can be found on the <a class="reference external" href="https://help.github.com/">Github website</a>.</p></li>
+<li><p><strong>Ant</strong> - GeoNetwork uses <a class="reference external" href="http://ant.apache.org/">Ant</a> to build the installer.  Version 1.6.5 works but any other recent version should be OK. Once installed, you should have the Ant command in your path (on Windows systems, you have to open a shell to check).</p></li>
+<li><p><strong>Sphinx</strong> - To build the GeoNetwork documentation in a nice format, <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> is used. Please note that if you don’t have a Python interpreter on your system, Sphinx will not work, so you need to install <a class="reference external" href="https://www.python.org/downloads/">Python</a>.</p></li>
+</ul>
+</section>
+<section id="building-running">
+<h2>Building &amp; Running<a class="headerlink" href="#building-running" title="Permalink to this headline">¶</a></h2>
+<p>If you only wish to quickly build and run GeoNetwork, execute the following:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone --depth <span class="m">3</span> --recursive https://github.com/geonetwork/core-geonetwork.git
+<span class="nb">cd</span> core-geonetwork
+mvn clean install -DskipTests
+<span class="nb">cd</span> web
+mvn jetty:run
+</pre></div>
+</div>
+<p>Now open your browser and navigate to <a class="reference external" href="http://localhost:8080/geonetwork">http://localhost:8080/geonetwork</a>.</p>
+<p>For a more detailed explanation, please read on.</p>
+<section id="check-out-the-source-code">
+<h3>Check out the source code<a class="headerlink" href="#check-out-the-source-code" title="Permalink to this headline">¶</a></h3>
+<p>Clone the repository and build:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone --recursive https://github.com/geonetwork/core-geonetwork.git
+<span class="nb">cd</span> core-geonetwork
+mvn clean install -DskipTests
+</pre></div>
+</div>
+</section>
+<section id="submodules">
+<h3>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h3>
+<p>GeoNetwork use submodules, these were initialized by the <code class="docutils literal notranslate"><span class="pre">--recursive</span></code> option when cloning the repository.</p>
+<p>If you missed using <code class="docutils literal notranslate"><span class="pre">--recursive</span></code> run the following:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> core-geonetwork
+git submodule init
+git submodule update
+</pre></div>
+</div>
+<p>Submodules are used to keep track of externals dependencies. It is necessary to init and update them after a branch change:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git submodule update --init
+</pre></div>
+</div>
+<p>Remember to rebuild the application after updating external dependencies.</p>
+</section>
+<section id="build-geonetwork">
+<h3>Build GeoNetwork<a class="headerlink" href="#build-geonetwork" title="Permalink to this headline">¶</a></h3>
+<p>Once you checked out the code from Github repository, go inside the GeoNetwork’s root folder and execute the Maven build command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mvn clean install
+</pre></div>
+</div>
+<p>If the build is successful you’ll get an output like:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>INFO<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> ------------------------------------------------------------------------
+<span class="o">[</span>INFO<span class="o">]</span> Reactor Summary:
+<span class="o">[</span>INFO<span class="o">]</span> ------------------------------------------------------------------------
+<span class="o">[</span>INFO<span class="o">]</span> GeoNetwork opensource ................................. SUCCESS <span class="o">[</span><span class="m">1</span>.345s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> Caching xslt module ................................... SUCCESS <span class="o">[</span><span class="m">1</span>.126s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> Jeeves modules ........................................ SUCCESS <span class="o">[</span><span class="m">3</span>.970s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> ArcSDE module <span class="o">(</span>dummy-api<span class="o">)</span> ............................. SUCCESS <span class="o">[</span><span class="m">0</span>.566s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> GeoNetwork web client module .......................... SUCCESS <span class="o">[</span><span class="m">23</span>.084s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> GeoNetwork user interface module ...................... SUCCESS <span class="o">[</span><span class="m">15</span>.940s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> Oaipmh modules ........................................ SUCCESS <span class="o">[</span><span class="m">1</span>.029s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> GeoNetwork domain ..................................... SUCCESS <span class="o">[</span><span class="m">0</span>.808s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> GeoNetwork core ....................................... SUCCESS <span class="o">[</span><span class="m">6</span>.426s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> GeoNetwork CSW server ................................. SUCCESS <span class="o">[</span><span class="m">2</span>.050s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> GeoNetwork health monitor ............................. SUCCESS <span class="o">[</span><span class="m">1</span>.014s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> GeoNetwork harvesters ................................. SUCCESS <span class="o">[</span><span class="m">2</span>.583s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> GeoNetwork services ................................... SUCCESS <span class="o">[</span><span class="m">3</span>.178s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> GeoNetwork Web module ................................. SUCCESS <span class="o">[</span><span class="m">2</span>:31.387s<span class="o">]</span>
+<span class="o">[</span>INFO<span class="o">]</span> ------------------------------------------------------------------------
+<span class="o">[</span>INFO<span class="o">]</span> ------------------------------------------------------------------------
+<span class="o">[</span>INFO<span class="o">]</span> BUILD SUCCESSFUL
+<span class="o">[</span>INFO<span class="o">]</span> ------------------------------------------------------------------------
+<span class="o">[</span>INFO<span class="o">]</span> Total time: <span class="m">3</span> minutes <span class="m">35</span> seconds
+<span class="o">[</span>INFO<span class="o">]</span> Finished at: Sun Oct <span class="m">27</span> <span class="m">16</span>:21:46 CET <span class="m">2013</span>
+</pre></div>
+</div>
+<p>Your local Maven repository now contain the GeoNetwork artifacts created (<code class="docutils literal notranslate"><span class="pre">$HOME/.m2/repository/org/geonetwork-opensource</span></code>).</p>
+</section>
+<section id="compilation-options">
+<h3>Compilation options<a class="headerlink" href="#compilation-options" title="Permalink to this headline">¶</a></h3>
+<p>Many Maven build options are available, for instance, you might like to use following options :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>-- Skip <span class="nb">test</span>
+$ mvn install -DskipTests
+
+-- Offline use
+$ mvn install -o
+
+-- Build really fast with <span class="m">2</span> threads per cpu core
+$ mvn install -o -DskipTests -T 2C
+</pre></div>
+</div>
+<p>Please refer to the <a class="reference external" href="http://www.sonatype.com/books/mvnref-book/reference/public-book.html">Maven documentation</a> for any other options.</p>
+</section>
+<section id="maven-profiles">
+<h3>Maven Profiles<a class="headerlink" href="#maven-profiles" title="Permalink to this headline">¶</a></h3>
+<p>Maven profiles are used to enable additional build configuration.</p>
+<p>Some components (eg. WFS feature indexing) of the application rely on an Elasticsearch instance. To enable those options, build the application with the <code class="docutils literal notranslate"><span class="pre">`es`</span></code> profile.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mvn clean install -Pes
+</pre></div>
+</div>
+</section>
+<section id="run-embedded-jetty-server">
+<h3>Run embedded Jetty server<a class="headerlink" href="#run-embedded-jetty-server" title="Permalink to this headline">¶</a></h3>
+<p>Maven comes with built-in support for Jetty via a <a class="reference external" href="http://docs.codehaus.org/display/JETTY/Maven+Jetty+Plugin">plug-in</a>.</p>
+<p>To run GeoNetwork with the embedded Jetty server you have to change directory to the root of the <strong>web</strong> module,
+and then execute the following Maven command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mvn jetty:run -Penv-dev
+</pre></div>
+</div>
+<p>After a while, GeoNetwork should be accessible at: <a class="reference external" href="http://localhost:8080/geonetwork">http://localhost:8080/geonetwork</a></p>
+<p>For changes related to the user interface in the <cite>web-ui</cite> module or the metadata schemas in the <cite>schemas</cite> module, these can be deployed in Jetty executing the following Maven command in the <strong>web</strong> module:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mvn process-resources
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="installing-index.html" class="btn btn-neutral float-right" title="Installing remote index" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installing-from-war-file.html" class="btn btn-neutral" title="Installing using a WAR file" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2001-2022, GeoNetwork opensource. Licensed under Creative Commons Attribution ShareAlike (Unported) v3.0 License.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.10',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            LINK_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
